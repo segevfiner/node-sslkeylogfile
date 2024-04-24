@@ -1,0 +1,11 @@
+{
+    "extends": "@tsconfig/node18/tsconfig.json",
+    "compilerOptions": {
+        "module": "Preserve",
+        "moduleResolution": "Bundler",
+        "isolatedModules": true,
+        "types": [
+            "node"
+        ]
+    }
+}
