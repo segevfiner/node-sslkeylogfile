@@ -4,12 +4,9 @@ import stream from "node:stream";
 import tls from "node:tls";
 import module from "node:module";
 
-let keylog: Promise<fs.FileHandle> | null = null;
-if (process.env.SSLKEYLOGFILE) {
-  keylog = fs.open(process.env.SSLKEYLOGFILE, "a", 0o600);
-}
+export function enableSSLKeyLog(keylogFilename: string): void {
+  const keylog = fs.open(keylogFilename, "a", 0o600);
 
-if (keylog) {
   tls.TLSSocket = class MyTLSSocket extends tls.TLSSocket {
     constructor(
       socket: net.Socket | stream.Duplex,
@@ -37,6 +34,6 @@ if (keylog) {
 
     return tlssock;
   };
-}
 
-module.syncBuiltinESMExports();
+  module.syncBuiltinESMExports();
+}
