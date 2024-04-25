@@ -1,4 +1,4 @@
-import "./dist/global.js";
+import "sslkeylogfile/global";
 import https from "node:https";
 
 const foo = https.get("https://www.google.com/");
