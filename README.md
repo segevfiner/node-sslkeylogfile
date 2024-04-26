@@ -1,6 +1,10 @@
 # sslkeylogfile
 Enable SSL/TLS key logging for all connections globally.
 
+This is similar to using the
+[`--tls-keylog`](https://nodejs.org/docs/latest-v20.x/api/cli.html#--tls-keylogfile) flag of
+Node.js, but can be controlled by JavaScript.
+
 ## Usage
 ```ts
 import { enableSSLKeyLog } from "sslkeylogfile";
