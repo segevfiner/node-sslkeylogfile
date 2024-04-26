@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "type": "module",
   "description": "Enable SSL/TLS key logging for all connections globally",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/segevfiner/node-sslkeylogfile.git"
+  },
   "types": "./dist/index.d.ts",
   "main": "./dist/index.js",
   "exports": {

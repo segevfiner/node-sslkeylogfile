@@ -4,6 +4,9 @@ import stream from "node:stream";
 import tls from "node:tls";
 import module from "node:module";
 
+/**
+ * Enable SSL/TLS key logging for all connections using the builtin `tls` module to the given file.
+ */
 export function enableSSLKeyLog(keylogFilename: string): void {
   const keylog = fs.open(keylogFilename, "a", 0o600);
 
@@ -37,3 +40,5 @@ export function enableSSLKeyLog(keylogFilename: string): void {
 
   module.syncBuiltinESMExports();
 }
+
+export const enableTLSKeyLog = enableSSLKeyLog;
