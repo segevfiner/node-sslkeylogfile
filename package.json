@@ -24,6 +24,7 @@
   "scripts": {
     "build": "tsup",
     "watch": "tsup --watch",
+    "prepack": "pnpm build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
